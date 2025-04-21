@@ -17,11 +17,11 @@ Given Files: [BulletDodger.zip](https://storage.googleapis.com/umassctf25-challs
 ## Approach
 
 The challenge was a Unity-based game that required reaching a score of 1,000,000 to win.
-Upon extracting the given zip i found `My project.exe`, and executable for the game and some other folders releated to it, running the file I found it was practically impossible to get that high of a score through normal gameplay.
+Upon extracting the given zip i found `My project.exe`, an executable for the game and some other folders related to it, running the game I found it was practically impossible to get that high of a score through normal gameplay.
 
 Given the fact it's a Unity game I suspected there might be a way to manipulate the game's memory since most Unity games don't have much protection against "cheating".
 
-Whilst I could've went through all the files I deemed it wasn't needed if "cheating" in the game could work.
+Note: Whilst I could've went through all the files I deemed it wasn't needed if "cheating" in the game could work.
 
 ## Exploitation
 
@@ -31,7 +31,7 @@ I downloaded and ran CheatEngine, attaching it to the game process. It allowed m
 
 ### Locating the Score Value:
 
-I set the game time to 0.01 with CheatEngine, that allowed me to just sit and wait until the score was >10000, dying with that score, effectivly "pausing" it and searching the score in memory revealed a few memory locations with the same value which I added to the Address List
+I set the game time to 0.01 with CheatEngine, that allowed me to just sit and wait until the score was > 10000(Wasn't 100% needed, just made the possible memory address list shorter), dying with that score, effectivly "pausing" the counter, and searching the score in memory revealed a few memory locations with the same value which I added to the Address List
 
 ### Score Modification:
 
